@@ -1,0 +1,35 @@
+def expert_system():
+    print("Welcome to the Expert System for Computer Diagnosis!")
+    print("Please describe your problem (e.g., 'won't turn on', 'slow performance', 'overheating', 'internet issue').")
+    
+    symptom = input("Enter your symptom: ").lower().strip()
+
+    # Rule-based reasoning
+    if "won't turn on" in symptom or "not turning on" in symptom:
+        diagnosis = "Possible issue with power supply or battery."
+        reasoning = "Because the system doesn't start, the first check should be power connection and supply."
+    
+    elif "slow" in symptom or "performance" in symptom:
+        diagnosis = "System is running slow."
+        reasoning = "Likely due to low RAM, background apps, or malware."
+    
+    elif "overheat" in symptom or "heating" in symptom:
+        diagnosis = "Overheating detected."
+        reasoning = "This is usually caused by dust, poor ventilation, or failing cooling fans."
+    
+    elif "internet" in symptom or "wifi" in symptom:
+        diagnosis = "Internet connection issue."
+        reasoning = "Could be due to router problems, network outage, or misconfigured settings."
+    
+    else:
+        diagnosis = "Unknown issue."
+        reasoning = "The system could not match your input with existing rules. Please consult a technician."
+
+    # Output result
+    print("\n--- Diagnosis Report ---")
+    print(f"Diagnosis: {diagnosis}")
+    print(f"Reasoning: {reasoning}")
+    print("-------------------------")
+
+# Run the expert system
+expert_system()
